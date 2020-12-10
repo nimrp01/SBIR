@@ -39,10 +39,8 @@ def main():
     if args.gzs_sbir:
         args.test = True
 
-    # Read the config file and
-    config = utils.read_config()
-    path_dataset = config['path_dataset']
-    path_aux = config['path_aux']
+    path_dataset = "/content/SBIR/Datasets"
+    path_aux = "/content/SBIR/Models"
 
     # modify the log and check point paths
     ds_var = None

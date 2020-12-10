@@ -37,10 +37,8 @@ def main():
     if args.split_eccv_2018:
         assert args.dataset == 'Sketchy_extended' or args.dataset == 'Sketchy'
 
-    # Read the config file and
-    config = utils.read_config()
-    path_dataset = config['path_dataset']
-    path_aux = config['path_aux']
+    path_dataset = "/content/SBIR/Datasets"
+    path_aux = "/content/SBIR/Models"
 
     # modify the log and check point paths
     ds_var = None
