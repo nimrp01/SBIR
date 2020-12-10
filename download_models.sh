@@ -13,8 +13,7 @@ parse_section()
     [[ "${line% =*}" == "$param" ]] && { echo "${line#*= }"; break; }
   done
 }
-# path_aux=$(parse_section $HOSTNAME path_aux < ./config.ini)
-path_aux = "content/SBIR/Models"
+path_aux="/content/SBIR/Models"
 if [[ ! -d $path_aux ]]; then
   mkdir $path_aux
 fi
