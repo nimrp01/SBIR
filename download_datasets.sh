@@ -20,7 +20,7 @@ fi
 chmod 755 -R $path_dataset
 ############################################# download the Sketchy dataset #############################################
 echo "Downloading the Sketchy dataset (it will take some time)"
-python3 src/download_gdrive.py 0B7ISyeE8QtDdTjE1MG9Gcy1kSkE $path_dataset/Sketchy.7z
+python3 src/download_gdrive.py 1wmjBXJk3d4RVVD9R_SW9ce3cfygVNFz6 $path_dataset/Sketchy.7z
 echo -n "Unzipping it..."
 7z x $path_dataset/Sketchy.7z -o$path_dataset > $path_dataset/garbage.txt
 echo "Done"
@@ -29,7 +29,7 @@ rm $path_dataset/Sketchy.7z
 rm $path_dataset/README.txt
 mv $path_dataset/256x256 $path_dataset/Sketchy
 echo "Downloading the extended photos of Sketchy dataset (it will take some time)"
-python3 src/download_gdrive.py 0B2U-hnwRkpRrdGZKTzkwbkEwVkk $path_dataset/Sketchy/extended_photo.zip
+python3 src/download_gdrive.py 1MOEiWv8-hMRXFSrBygg3oX1Qr2cRM6pL $path_dataset/Sketchy/extended_photo.zip
 echo -n "Unzipping it..."
 unzip -qq $path_dataset/Sketchy/extended_photo.zip -d $path_dataset/Sketchy
 rm $path_dataset/Sketchy/extended_photo.zip
@@ -53,7 +53,8 @@ if [[ ! -d $path_dataset/TU-Berlin ]]; then
   mkdir $path_dataset/TU-Berlin
 fi
 echo "Downloading the sketches of TU-Berlin dataset (it will take some time)"
-wget http://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/sketches_png.zip -O $path_dataset/TU-Berlin/sketches.zip
+# wget http://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/sketches_png.zip -O $path_dataset/TU-Berlin/sketches.zip
+python3 src/download_gdrive.py 1PV2G7N0EUV2O1OdJFBpAvJLERw6VIGrT $path_dataset/TU-Berlin/sketches.zip
 echo -n "Unzipping it..."
 unzip -qq $path_dataset/TU-Berlin/sketches.zip -d $path_dataset/TU-Berlin
 rm $path_dataset/TU-Berlin/sketches.zip
@@ -107,7 +108,7 @@ mv $path_dataset/'TU-Berlin/sketches/head-phones' $path_dataset/'TU-Berlin/sketc
 mv $path_dataset/'TU-Berlin/sketches/tennis-racket' $path_dataset/'TU-Berlin/sketches/tennis_racket'
 echo "Done"
 echo "Downloading the images of TU-Berlin dataset (it will take some time)"
-python3 src/download_gdrive.py 0B2U-hnwRkpRrMFVvTmFQa3dmSUk $path_dataset/TU-Berlin/images.zip
+python3 src/download_gdrive.py 1Bpy6EnHuq7UaqJhj-KsbyFULrm2lcFCh $path_dataset/TU-Berlin/images.zip
 echo -n "Unzipping it..."
 unzip -qq $path_dataset/TU-Berlin/images.zip -d $path_dataset/TU-Berlin
 rm $path_dataset/TU-Berlin/images.zip
