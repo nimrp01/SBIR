@@ -88,6 +88,7 @@ def main():
         splits = utils.load_files_sketchy_zeroshot(root_path=root_path, split_eccv_2018=args.split_eccv_2018,
                                                    photo_dir=photo_dir, sketch_dir=sketch_dir, photo_sd=photo_sd,
                                                    sketch_sd=sketch_sd)
+        print(splits)
     elif args.dataset == 'TU-Berlin':
         photo_dir = 'images'
         sketch_dir = 'sketches'
