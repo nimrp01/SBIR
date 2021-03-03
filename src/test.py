@@ -74,7 +74,7 @@ def main():
     transform_sketch = transforms.Compose([transforms.Resize((args.sk_sz, args.sk_sz)), transforms.ToTensor()])
 
     # Load the dataset
-    print('Loading data...', end='')
+    print('Loading...', end='')
 
     if args.dataset == 'Sketchy':
         if ds_var == 'extended':
@@ -188,7 +188,8 @@ def main():
     # load the best model yet
     best_model_file = os.path.join(path_cp, 'model_best.pth')
     if os.path.isfile(best_model_file):
-        print("Loading best model from '{}'".format(best_model_file))
+#         print("Loading best model from '{}'".format(best_model_file))
+        print("Loading.....")
         checkpoint = torch.load(best_model_file)
         epoch = checkpoint['epoch']
         best_map = checkpoint['best_map']
@@ -196,13 +197,13 @@ def main():
         print("Loaded best model '{0}' (epoch {1}; mAP@all {2:.4f})".format(best_model_file, epoch, best_map))
         print('***Test***')
         valid_data = validate(test_loader_sketch, test_loader_image, sem_pcyc_model, epoch, args)
-        print('Results on test set: mAP@all = {1:.4f}, Prec@100 = {0:.4f}, mAP@200 = {3:.4f}, Prec@200 = {2:.4f}, '
-              'Time = {4:.6f} || mAP@all (binary) = {6:.4f}, Prec@100 (binary) = {5:.4f}, mAP@200 (binary) = {8:.4f}, '
-              'Prec@200 (binary) = {7:.4f}, Time (binary) = {9:.6f} '
-              .format(valid_data['prec@100'], np.mean(valid_data['aps@all']), valid_data['prec@200'],
-                      np.mean(valid_data['aps@200']), valid_data['time_euc'], valid_data['prec@100_bin'],
-                      np.mean(valid_data['aps@all_bin']), valid_data['prec@200_bin'], np.mean(valid_data['aps@200_bin'])
-                      , valid_data['time_bin']))
+#         print('Results on test set: mAP@all = {1:.4f}, Prec@100 = {0:.4f}, mAP@200 = {3:.4f}, Prec@200 = {2:.4f}, '
+#               'Time = {4:.6f} || mAP@all (binary) = {6:.4f}, Prec@100 (binary) = {5:.4f}, mAP@200 (binary) = {8:.4f}, '
+#               'Prec@200 (binary) = {7:.4f}, Time (binary) = {9:.6f} '
+#               .format(valid_data['prec@100'], np.mean(valid_data['aps@all']), valid_data['prec@200'],
+#                       np.mean(valid_data['aps@200']), valid_data['time_euc'], valid_data['prec@100_bin'],
+#                       np.mean(valid_data['aps@all_bin']), valid_data['prec@200_bin'], np.mean(valid_data['aps@200_bin'])
+#                       , valid_data['time_bin']))
         print('Saving qualitative results...', end='')
         path_qualitative_results = os.path.join(path_results, 'qualitative_results')
         utils.save_qualitative_results(root_path, sketch_dir, sketch_sd, photo_dir, photo_sd, splits['te_fls_sk'],
