@@ -18,7 +18,8 @@ if [[ ! -d $path_aux ]]; then
   mkdir $path_aux
 fi
 ############################################# download semantic embeddings #############################################
-echo "Downloading semantic embeddings and pre-trained models (it will take some time)"
+# echo "Downloading semantic embeddings and pre-trained models (it will take some time)"
+echo "Semantic embeddings (it will take some time)"
 python3 src/download_gdrive.py 11vmz-iA-U3b2oi6u4bTbXA8PXAcrZdfZ $path_aux/aux_files.zip
 echo -n "Unzipping it..."
 unzip $path_aux/aux_files.zip -d $path_aux
