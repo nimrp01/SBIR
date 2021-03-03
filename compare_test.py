@@ -68,7 +68,7 @@ for (i, (name, image)) in enumerate(images):
 plt.show()
 
 # compare the images
-compare_images(original, original, "Original vs. Original")
-compare_images(original, contrast, "Original vs. Contrast")
-compare_images(original, shopped, "Original vs. Photoshopped")
+# compare_images(original, original, "Original vs. Original")
+# compare_images(original, contrast, "Original vs. Contrast")
+# compare_images(original, shopped, "Original vs. Photoshopped")
 
