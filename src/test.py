@@ -194,7 +194,7 @@ def main():
         epoch = checkpoint['epoch']
         best_map = checkpoint['best_map']
         sem_pcyc_model.load_state_dict(checkpoint['state_dict'])
-        print("Loaded best model '{0}' (epoch {1}; mAP@all {2:.4f})".format(best_model_file, epoch, best_map))
+#         print("Loaded best model '{0}' (epoch {1}; mAP@all {2:.4f})".format(best_model_file, epoch, best_map))
         print('***Test***')
         valid_data = validate(test_loader_sketch, test_loader_image, sem_pcyc_model, epoch, args)
 #         print('Results on test set: mAP@all = {1:.4f}, Prec@100 = {0:.4f}, mAP@200 = {3:.4f}, Prec@200 = {2:.4f}, '
